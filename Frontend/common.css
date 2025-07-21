@@ -1,0 +1,85 @@
+body {
+    margin: 100px 0px 0px 0px
+}
+
+@font-face {
+    src: url(../images-fonts/Archivo-VariableFont_wdth\,wght.ttf);
+    font-family: Standard;
+}
+
+* {
+    font-family: Standard;
+}
+
+:root {
+    
+    --MAINCOLOR: #6504b5;
+
+}
+
+/* Framework */
+
+header {
+position: fixed;
+
+top: 0;
+left: 0;
+right: 0;
+
+height: 75px;
+margin: 0px;
+padding: 0px 200px;
+
+
+background-color: var(--MAINCOLOR);
+
+}
+
+nav {
+
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+main {
+    margin: 0px 200px;
+    border: 1px solid black;
+}
+ 
+
+/* Navigation detail */
+
+#navButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: larger;
+    padding: 20px;
+    width: 100px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+/* Main detail */
+
+
+/* Footer detail */
+
+
+
+
+#UIcardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    height: 500px;
+
+    gap: 10px;
+}
+
