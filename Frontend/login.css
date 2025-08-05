@@ -1,0 +1,101 @@
+@import './colorPalette.css';
+
+.POPUP {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.popupContainer {
+    display: flex;
+    flex-direction: column; 
+    
+    align-items: center;
+
+    padding: 15px;
+    gap: 20px;
+    height: 300px;
+
+    background-color: var(--MAINCOLOR);
+
+    border-radius: 10px;
+
+    z-index: 1000;    
+}
+
+#popupRegisterContainer {
+    display: flex;
+}
+
+.popupClose {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 5px;
+
+    color: var(--FONTCOLORLIGHT);
+    background-color: var(--FONTRED);
+
+    border: 0px;
+}
+
+.popupClose:hover {
+    opacity: 0.5;
+}
+
+.inputFieldPopup {
+    height: 30px;
+    padding: 5px;
+
+    width: 400px;
+
+    border-radius: 5px;
+    background-color: var(--LIGHTMAINCOLOR);
+
+    border: 0px;
+
+    font-size: var(--LARGE);
+
+    color: var(--FONTCOLORLIGHT);
+}
+
+.h3Popup {
+    color: var(--FONTCOLORLIGHT);
+    margin: 0px 5px;
+}
+
+.popupH4 {
+    margin: 0px 0px 10px 0px;
+
+    color: var(--FONTCOLORLIGHT);
+}
+
+.popupInformation {
+    color: var(--FONTCOLORLIGHT);
+}
+
+#loginPopupClickHere {
+    color: var(--FONTBLUE);
+}
+
+#loginPopupClickHere:hover {
+    opacity: 0.5;
+    text-decoration: underline;
+}
+
+.popupButtonsContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.popupButton {
+    padding: 10px 15px;
+
+}

@@ -1,0 +1,26 @@
+:root {
+
+    --FONTCOLORLIGHT: aliceblue;
+    --FONTRED: #e74c3c;
+    --FONTYELLOW: #f1c40f;
+    --FONTGREEN: #1cb92c;
+    --FONTBLUE: #1f6dcd;
+
+    --BORDERCOLOR: #000000;
+
+    --FONTCOLORLIGHTHOVER: rgba(240, 248, 255, 0.478);
+
+    --LIGHTMAINCOLOR: #20232e;
+    --MAINCOLOR: #171921;
+    --BACKGROUNDCOLOR: #111318;
+    --SEPERATOR: #000000;
+
+    --SMALL: 14px;
+    --MEDIUM: 18px;
+    --LARGE: 22px;
+    --LOGO: 30px;
+
+    --BOLD: 500;
+
+}
+

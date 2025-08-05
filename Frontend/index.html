@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colorPalette.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="homepage.css">
@@ -10,15 +11,67 @@
     <title>Growpire</title>
 </head>
 <body>
+
+    <div class="POPUP Hide" id="popupLoginContainer">
+        <div class="popupContainer">
+            <h3 class="h3Popup">Log in</h3>
+            <button class="cursorHover popupClose">X</button>
+            <div class="popupTextPair">
+                <h4 class="popupH4">Username</h4>
+                <input class="inputFieldPopup" type="text">
+            </div>
+            <div class="popupTextPair">
+                <h4 class="popupH4">Password</h4>
+                <input class="inputFieldPopup" type="password">
+            </div>
+            
+           
+            <div class="popupInformation">If you are missing an account click <span class="cursorHover" id="loginPopupClickHere">here</span></div>
+            <div class="popupButtonsContainer">
+                <button class="popupButton cursorHover" id="loginButton">Log in</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="POPUP Hide" id="popupRegisterContainer">
+         <div class="popupContainer">
+            <h3 class="h3Popup">Register</h3>
+            <input class="inputFieldPopup" type="text" placeholder="Username">
+            <input class="inputFieldPopup" type="password" placeholder="password">
+            <input class="inputFieldPopup" type="text" placeholder="Gmail">
+            <div class="popupButtonsContainer">
+                <button class="popupButton cursorHover" id="registerButton">Create</button>
+                <button class="cursorHover popupClose">X</button>
+            </div>
+            
+        </div>
+    </div>
+
     <header>
         <nav>
-            <div id="navLogo">
-
+            <div class="navContainer" id="navLeft">
+                <div id="logo" class="cursorHover"><img src="../images-fonts/GrowpireLogo.jpg" alt=""> 
+                    <p>
+                        <span class="logoG">G</span><span class="logoR">r</span><span class="logoO">o</span><span class="logoW">w</span>
+                        <span class="logoG">P</span><span class="logoR">i</span><span class="logoO">r</span><span class="logoW">e</span>
+                    </p>
+                </div>
+                <div class="navSeperator"></div>
+                <div id="navGameContainer">
+                    <div class="navButton cursorHover" id="rouletteButton">Roulette</div>
+                    <div class="navButton cursorHover" id="blackjackButton">Blackjack</div>
+                    <div class="navButton cursorHover" id="minesButton">Mines</div>
+                    <div class="navButton cursorHover" id="remeButton">Reme</div>
+                    <div class="navButton cursorHover" id="coinflipButton">Coinflip</div>
+                </div>
             </div>
 
-            <div id="navButtons">
-                <div id="signInButton">
-                    Sign in
+            <div class="navContainer" id="navRight">
+                <div class="navButton cursorHover" id="loginNavButton">
+                    Log in
+                </div>
+                <div class="navButton cursorHover" id="registerNavButton">
+                    Register
                 </div>
             </div>
         </nav>
@@ -65,6 +118,7 @@
     <footer>
         
     </footer>
+
     <script type="module" src="client.js"></script>
 </body>
 </html>
