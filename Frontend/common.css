@@ -156,13 +156,13 @@ color: var(--FONTRED)
 
 }
 
-#registerButton {
+#registerNavButton {
     background-color: #1f6dcd;
     border: 1px solid black;
     border-radius: 10px;
 }
 
-#registerButton:hover {
+#registerNavButton:hover {
     opacity: 0.5;
     border-color: var(--FONTCOLORLIGHT);
 }

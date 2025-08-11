@@ -14,19 +14,19 @@
 
     <div class="POPUP Hide" id="popupLoginContainer">
         <div class="popupContainer">
-            <h3 class="h3Popup">Log in</h3>
+            <h3 id="loginHeadline" class="h3Popup">Log in</h3>
             <button class="cursorHover popupClose">X</button>
             <div class="popupTextPair">
                 <h4 class="popupH4">Username</h4>
-                <input class="inputFieldPopup" type="text">
+                <input id="loginInputUsername" class="inputFieldPopup" type="text">
             </div>
             <div class="popupTextPair">
                 <h4 class="popupH4">Password</h4>
-                <input class="inputFieldPopup" type="password">
+                <input id="loginInputPassword" class="inputFieldPopup" type="password">
             </div>
             
            
-            <div class="popupInformation">If you are missing an account click <span class="cursorHover" id="loginPopupClickHere">here</span></div>
+            <div class="popupInformation">If you are missing an account click <span class="cursorHover clickHere" id="loginPopupClickHere">here</span></div>
             <div class="popupButtonsContainer">
                 <button class="popupButton cursorHover" id="loginButton">Log in</button>
             </div>
@@ -35,10 +35,22 @@
 
     <div class="POPUP Hide" id="popupRegisterContainer">
          <div class="popupContainer">
-            <h3 class="h3Popup">Register</h3>
-            <input class="inputFieldPopup" type="text" placeholder="Username">
-            <input class="inputFieldPopup" type="password" placeholder="password">
-            <input class="inputFieldPopup" type="text" placeholder="Gmail">
+            <h3 id="registerHeadline" class="h3Popup">Register</h3>
+            <div class="popupTextPair">
+                <h4 class="popupH4">Username</h4>
+                <input id="registerInputUsername" class="inputFieldPopup" type="text">
+            </div>
+            <div class="popupTextPair">
+                <h4 class="popupH4">Password</h4>
+                <input id="registerInputPassword" class="inputFieldPopup" type="password">
+            </div>
+            <div class="popupTextPair">
+                <h4 class="popupH4">Email</h4>
+                <input id="registerInputGmail" class="inputFieldPopup" type="text">
+            </div>
+
+            <div class="popupInformation">Already have an account? Click <span class="cursorHover clickHere" id="registerPopupClickHere">here</span></div>
+
             <div class="popupButtonsContainer">
                 <button class="popupButton cursorHover" id="registerButton">Create</button>
                 <button class="cursorHover popupClose">X</button>
