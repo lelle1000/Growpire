@@ -1,16 +1,3 @@
 [
-  {
-    "userId": 1,
-    "name": "Lasse",
-    "password": "bassee",
-    "gmail": "dew@me.com",
-    "balance": 1000
-  },
-  {
-    "userId": 2,
-    "name": "Chloe",
-    "password": "ilovebaby123",
-    "gmail": "zirk@me.com",
-    "balance": 1000
-  }
+  
 ]
