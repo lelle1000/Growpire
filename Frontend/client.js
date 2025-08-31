@@ -21,7 +21,17 @@ const loginUsername = document.querySelector("#loginInputUsername");
 const loginPassword = document.querySelector("#loginInputPassword");
 
 const registerHeadline = document.querySelector("#registerHeadline")
+const loginHeadline = document.querySelector("#loginHeadline")
 
+const loggedInUser = document.querySelector("#loggedInUser")
+const userSubMenu = document.querySelector("#userSubmenuContainer")
+
+const signOutButton = document.querySelector("#signOutButton")
+
+const userBalanceAmount = document.querySelector("#userBalanceAmount")
+
+let activeUserId = undefined
+userBalanceAmount.textContent = userBalanceAmount.dataset.originalText
 
 loginPopupButton.addEventListener("click", async () => {
     if (popupLoginContainer.classList.contains("Hide")) {
@@ -56,6 +66,14 @@ closePopup.forEach(button => button.addEventListener("click", async () => {
     functions.Hide(popupRegisterContainer)
 }))
 
+loggedInUser.addEventListener("click", async () => {
+    if(userSubMenu.classList.contains("Hide")) {
+        functions.Reveal(userSubMenu)
+    } else if (userSubMenu.classList.contains("Reveal")) {
+        functions.Hide(userSubMenu)
+    }
+})
+
 
 // Register & Login request
 
@@ -69,6 +87,34 @@ createAccount.addEventListener("click", async () => {
     registerUsername.value = ""
     registerPassword.value = ""
     registerGmail.value = ""
+
+    if(registerResponse.status === 202 || registerResponse.ok) {
+        const successfulData = await registerResponse.json()
+        functions.successPopupMessageHandler(registerHeadline, "Account successfully created")
+        setTimeout(() => {
+            functions.Hide(popupRegisterContainer)
+        }, 5000)
+
+        activeUserId = successfulData.userId
+        
+        if (activeUserId !== undefined) {
+            if(successfulData.username.length <= 8) {
+                loggedInUser.textContent = successfulData.username
+                functions.Reveal(loggedInUser)
+                functions.Hide(registerPopupButton)
+                functions.Hide(loginPopupButton)
+            } else {
+                loggedInUser.textContent = loggedInUser.dataset.originalText
+                functions.Reveal(loggedInUser)
+                functions.Hide(registerPopupButton)
+                functions.Hide(loginPopupButton)
+            }
+            
+            userBalanceAmount = successfulData.userBalance
+            
+        }
+
+    }
 
     if(!registerResponse.ok) {
         const errorData = await registerResponse.json()   
@@ -100,5 +146,53 @@ login.addEventListener("click", async () => {
         body: JSON.stringify({ loginUsername: loginUsername.value, loginPassword: loginPassword.value }),
         headers: { "Content-Type" : "application/json" }
     })
+
+    if(loginResponse.ok || loginResponse.status === 202 ) {
+        const successfulData = await loginResponse.json()
+
+        activeUserId = successfulData.userId
+        
+        userBalanceAmount = successfulData.userBalance
+
+        functions.successPopupMessageHandler(loginHeadline, "Logged in")
+        setTimeout(() => {
+            functions.Hide(popupLoginContainer)
+        }, 5000)
+        
+        
+        if (activeUserId !== undefined) {
+            if(successfulData.username.length <= 8) {
+                loggedInUser.textContent = successfulData.username
+                functions.Reveal(loggedInUser)
+                functions.Hide(registerPopupButton)
+                functions.Hide(loginPopupButton)
+            } else {
+                loggedInUser.textContent = loggedInUser.dataset.originalText
+                functions.Reveal(loggedInUser)
+                functions.Hide(registerPopupButton)
+                functions.Hide(loginPopupButton)
+            }
+            
+        }
+    }
+
+    if(!loginResponse.ok || loginResponse.status === 404) {
+        const errorData = await loginResponse.json()
+    }
+    
+    
 })
+
+signOutButton.addEventListener("click", async () => {
+    functions.Hide(loggedInUser)
+    functions.Reveal(loginPopupButton)
+    functions.Reveal(registerPopupButton)
+    functions.Hide(userSubMenu)
+
+    if (activeUserId !== undefined) {
+        activeUserId = undefined
+        userBalanceAmount.textContent = userBalanceAmount.dataset.originalText
+    }
+})
+
 

@@ -1,1 +1,52 @@
 @import './colorPalette.css';
+
+#userSubmenuBox {
+    position: fixed;
+
+    right: 0;
+    top: 75px;
+
+    width: 135px;
+    height: 80vh;
+
+    background-color: var(--MAINCOLOR);
+
+    border-radius: 0px 0px 0px 10px;
+    box-sizing: border-box;
+    padding: 5px;
+
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3);;
+}
+
+#subMenuProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.profileButton {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-weight: var(--BOLD);
+}
+
+#deleteAccountButton {
+    background-color: var(--FONTRED);    
+}
+
+.profileButton:hover {
+    opacity: 0.5;
+}
+
+#profileSubMenuButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#gameStatsButton {
+    background-color: var(--FONTGREEN);
+}

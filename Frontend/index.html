@@ -14,7 +14,7 @@
 
     <div class="POPUP Hide" id="popupLoginContainer">
         <div class="popupContainer">
-            <h3 id="loginHeadline" class="h3Popup">Log in</h3>
+            <h3 id="loginHeadline" class="h3Popup" data-original-text="Log in">Log in</h3>
             <button class="cursorHover popupClose">X</button>
             <div class="popupTextPair">
                 <h4 class="popupH4">Username</h4>
@@ -35,7 +35,7 @@
 
     <div class="POPUP Hide" id="popupRegisterContainer">
          <div class="popupContainer">
-            <h3 id="registerHeadline" class="h3Popup">Register</h3>
+            <h3 id="registerHeadline" class="h3Popup" data-original-text="Register"="">Register</h3>
             <div class="popupTextPair">
                 <h4 class="popupH4">Username</h4>
                 <input id="registerInputUsername" class="inputFieldPopup" type="text">
@@ -70,24 +70,42 @@
                 </div>
                 <div class="navSeperator"></div>
                 <div id="navGameContainer">
-                    <div class="navButton cursorHover" id="rouletteButton">Roulette</div>
-                    <div class="navButton cursorHover" id="blackjackButton">Blackjack</div>
-                    <div class="navButton cursorHover" id="minesButton">Mines</div>
-                    <div class="navButton cursorHover" id="remeButton">Reme</div>
-                    <div class="navButton cursorHover" id="coinflipButton">Coinflip</div>
+                    <button class="navButton cursorHover" id="rouletteButton">Roulette</button>
+                    <button class="navButton cursorHover" id="blackjackButton">Blackjack</button>
+                    <button class="navButton cursorHover" id="minesButton">Mines</button>
+                    <button class="navButton cursorHover" id="remeButton">Reme</button>
+                    <button class="navButton cursorHover" id="coinflipButton">Coinflip</button>
                 </div>
             </div>
 
             <div class="navContainer" id="navRight">
-                <div class="navButton cursorHover" id="loginNavButton">
+                <div id="userBalance"> <span class="Fancy">Balance</span> <span id="userBalanceAmount" data-original-text="(Invalid)"></span> <span class="Fancy">$</span></div>
+                <div class="Reveal navButton cursorHover" id="loginNavButton">
                     Log in
                 </div>
-                <div class="navButton cursorHover" id="registerNavButton">
+                <div class="Reveal navButton cursorHover" id="registerNavButton">
                     Register
                 </div>
+
+                <div class="Hide navButton cursorHover" id="loggedInUser" data-original-text="Profile"></div>
             </div>
         </nav>
     </header>
+
+    <div class="Hide" id="userSubmenuContainer">
+        <div id="userSubmenuBox">
+            <div id="subMenuProfile">
+                <div id="profileSubMenuButtons">
+                    <button class="profileButton cursorHover" id="gameStatsButton">Game Statistics</button>
+                    <button class="profileButton cursorHover" id="signOutButton">Sign Out</button>
+                    <button class="profileButton cursorHover" id="resetPasswordButton">Reset Password</button>
+                </div>
+                <div >
+                    <button class="profileButton cursorHover" id="deleteAccountButton">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main>
         <div id="UIcardContainer">

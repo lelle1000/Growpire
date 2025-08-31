@@ -5,6 +5,7 @@
     --FONTYELLOW: #f1c40f;
     --FONTGREEN: #1cb92c;
     --FONTBLUE: #1f6dcd;
+    --FANCY: gold;
 
     --BORDERCOLOR: #000000;
 
@@ -20,6 +21,7 @@
     --LARGE: 22px;
     --LOGO: 30px;
 
+    --SLIMBOLD: 300;
     --BOLD: 500;
 
 }

@@ -1,5 +1,4 @@
 export class registerUser {
-    static userArray = []
 
     constructor (name, password, gmail) {
         if (this.isValidUsername(name) !== true) {
@@ -24,7 +23,7 @@ export class registerUser {
         this.name = name
         this.password = password
         this.gmail = gmail
-        registerUser.userArray.push(this)
+        this.balance = 1000
     }
 
     isValidUsername(username) {
@@ -53,13 +52,17 @@ export class registerUser {
     }
 
     newId () {
-        if(registerUser.userArray.length <= 0) {
+
+        let users = Deno.readTextFileSync("./USERS.json")
+        let userArray = JSON.parse(users)
+
+        if(userArray.length <= 0) {
             return 1
         }
         let currentUserId = -Infinity
-        for (let i = 0; i < registerUser.userArray.length; i++) {
-            if(registerUser.userArray[i].userId > currentUserId) {
-                currentUserId = registerUser.userArray[i].userId
+        for (let i = 0; i < userArray.length; i++) {
+            if(userArray[i].userId > currentUserId) {
+                currentUserId = userArray[i].userId
             }
         }
         return currentUserId + 1

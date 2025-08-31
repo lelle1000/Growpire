@@ -128,11 +128,15 @@ color: var(--FONTRED)
 
     color: var(--FONTCOLORLIGHT);
     font-size: var(--LARGE);
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
     border-left: 1px solid var(--SEPERATOR);
 
     padding: 15px;
 
     font-weight: var(--BOLD);
+    background-color: var(--MAINCOLOR);
 
 }
 
@@ -165,6 +169,23 @@ color: var(--FONTRED)
 #registerNavButton:hover {
     opacity: 0.5;
     border-color: var(--FONTCOLORLIGHT);
+}
+
+#userBalance {
+    color: var(--FANCY);
+    font-size: var(--LARGE);
+
+    padding: 15px;
+
+    font-weight: var(--BOLD);
+}
+
+#userBalanceAmount {
+    color: var(--FONTCOLORLIGHT);
+}
+
+.Fancy {
+    color: gold;
 }
 
 /* Main detail */

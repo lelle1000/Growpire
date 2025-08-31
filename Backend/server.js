@@ -17,7 +17,7 @@ async function handler (request) {
 
         if (request.method === "POST") {
             try {
-                const jsonCheck = functions.validateJsonConType(request)
+                const jsonCheck = await functions.validateJsonConType(request, headersCORS)
                 if(jsonCheck !== true) {
                     return jsonCheck
                 }
@@ -32,7 +32,7 @@ async function handler (request) {
                 let allUsersParsed = JSON.parse(allUsers)
 
 
-                if(allUsersParsed.find(user => user.Gmail === userRegistrationData.registerGmail)) {
+                if(allUsersParsed.find(user => user.gmail.toLowerCase() === userRegistrationData.registerGmail.toLowerCase())) {
                     return new Response(JSON.stringify({error: "Gmail already in use"}), { status: 406, headers: headersCORS})
                 } 
 
@@ -41,7 +41,7 @@ async function handler (request) {
                 allUsersParsed.push(newUser)
 
                 await Deno.writeTextFile("./USERS.json", JSON.stringify(allUsersParsed, null, 2))
-                return new Response(JSON.stringify({userId: newUser.userId}), { status: 202, headers: headersCORS})
+                return new Response(JSON.stringify({userId: newUser.userId, username: newUser.name, userBalance: newUser.balance}), { status: 202, headers: headersCORS})
             } catch (err) {
                 if(err.code === "INVALID USERNAME") {
                     return new Response(JSON.stringify({error: "INVALID USERNAME"}), { status: 409, headers: headersCORS })
@@ -56,6 +56,38 @@ async function handler (request) {
                 return new Response(JSON.stringify({error: "Unkown error"}), { status: 500, headers: headersCORS })
             }
             
+        }
+    }
+
+    if(url.pathname === "/login") {
+        if (request.method === "POST") {
+            try {
+                
+                const jsonCheck = await functions.validateJsonConType(request, headersCORS)
+                if(jsonCheck !== true) {
+                    return jsonCheck
+                }
+
+                const loginData = await request.json()
+
+                let userAccounts = Deno.readTextFileSync("./USERS.json")
+                let Accounts = JSON.parse(userAccounts)
+
+                let correctUser = Accounts.find(user => user.name.toLowerCase() === loginData.loginUsername.toLowerCase() && user.password === loginData.loginPassword)
+                if (correctUser) {
+                    return new Response(JSON.stringify({userId: correctUser.userId, username: correctUser.name, userBalance: correctUser.balance}), { status: 202, headers: headersCORS })
+                }   
+
+                return new Response(JSON.stringify({error: "Wrong username or password"}, { status: 404, headers: headersCORS }))
+                
+
+
+            } catch (err) {
+                return new Response(JSON.stringify({error: "Unknown error"}), { status: 500, headers: headersCORS})
+            }
+
+
+
         }
     }
 

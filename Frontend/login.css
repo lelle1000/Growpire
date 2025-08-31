@@ -114,3 +114,14 @@
 .popupErrorMessage {
     color: var(--FONTRED) !important;
 }
+
+.popupSuccessMessage {
+    color: var(--FONTGREEN) !important;
+}
+
+#loggedInUser {
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
