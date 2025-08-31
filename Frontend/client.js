@@ -110,7 +110,7 @@ createAccount.addEventListener("click", async () => {
                 functions.Hide(loginPopupButton)
             }
             
-            userBalanceAmount = successfulData.userBalance
+            userBalanceAmount.textContent = successfulData.userBalance
             
         }
 
@@ -152,7 +152,7 @@ login.addEventListener("click", async () => {
 
         activeUserId = successfulData.userId
         
-        userBalanceAmount = successfulData.userBalance
+        userBalanceAmount.textContent = successfulData.userBalance
 
         functions.successPopupMessageHandler(loginHeadline, "Logged in")
         setTimeout(() => {

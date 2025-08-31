@@ -125,12 +125,10 @@ color: var(--FONTRED)
 }
 
 .navButton {
-
+    
     color: var(--FONTCOLORLIGHT);
     font-size: var(--LARGE);
-    border-top: 0px;
-    border-right: 0px;
-    border-bottom: 0px;
+    border: 0px;
     border-left: 1px solid var(--SEPERATOR);
 
     padding: 15px;

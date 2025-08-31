@@ -1,3 +1,37 @@
 [
-  
+  {
+    "userId": 1,
+    "name": "Hasse",
+    "password": "123553425",
+    "gmail": "@gmail.com",
+    "balance": 1000
+  },
+  {
+    "userId": 2,
+    "name": "Basse",
+    "password": "basse123",
+    "gmail": "basse@gmail.com",
+    "balance": 1000
+  },
+  {
+    "userId": 3,
+    "name": "Yehor",
+    "password": "34424",
+    "gmail": "32f@me.com",
+    "balance": 1000
+  },
+  {
+    "userId": 4,
+    "name": "gregre",
+    "password": "gregegr",
+    "gmail": "@gmail.com1",
+    "balance": 1000
+  },
+  {
+    "userId": 5,
+    "name": "lelle",
+    "password": "lelle",
+    "gmail": "2121@gmail.com",
+    "balance": 1000
+  }
 ]
